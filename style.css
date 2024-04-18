@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:wght@300;400;500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(EV-Charging.jpg);
+    background-size: cover;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* Ensuring text is white for better contrast */
+}
+
+h2 {
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 15px;
+    padding: 20px;
+    background-color: rgba(51, 51, 51, 0.6);
+    border-radius: 15px;
+}
+
+.input-fields {
+    width: 700px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+    padding: 10px;
+    background-color: #363333a0;
+    /* Lighter background for the column */
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input[type="number"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-sizing: border-box;
+
+}
+
+input[type="number"]:focus,
+select:focus {
+    outline: none;
+    border: 2px solid #3b8aa7cf;
+    box-sizing: border-box;
+}
+
+input[type="number"]::placeholder {
+    color: blue;
+    /* Blue text for the placeholder */
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    margin-top: 15px;
+    /* transform: translate(262%,0); */
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+
+}
+
+button:hover {
+    background-color: #448947;
+}
+
+#result {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    /* column-gap: 5px; */
+    color: rgb(254, 254, 254);
+    text-align: center;
+    visibility: hidden;
+    height: 100px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+#result h3 {
+    height: 1vh;
+    gap: 0px;
+}
+
+
+/* RESPONSIVE CSS */
+
+@media screen and (max-width: 850px) {
+    .container {
+        max-width: 90vw;
+        font-size: 0.75rem;
+    }
+
+    .input-fields {
+        width: 80vw;
+    }
+
+    input,
+    select {
+        font-size: 0.75rem;
+    }
+
+    #result {
+        font-size: 0.8rem;
+    }
+
+    button {
+        height: 37px;
+        width: 100px;
+        font-size: 0.8rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .container {
+        margin-top: 0;
+        min-width: 100vw;
+        padding: 0 1vw;
+        border-radius: 0;
+        height: 100vh;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    .input-fields {
+        width: 100vw;
+        padding: 2vw 2vw 2vw 2vw;
+    }
+
+    button {
+        height: 33px;
+        width: 90px;
+        font-size: 0.75rem;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    body {
+        overflow: scroll;
+    }
+
+    .container {
+        margin-top: 0px;
+        margin-bottom:0 ;
+        padding-top: 0px;
+        height: fit-content;
+        font-size: 0.8rem;
+    }
+
+    input[type="number"],
+    select {
+        margin: 5px;
+    }
+
+    .container .input-fields .row {
+        flex-direction: column;
+        /* Change to column direction */
+    }
+
+    .container .input-fields .row .column {
+        margin-bottom: 0;
+        /* Remove margin between columns */
+    }
+
+    .container .input-fields .row .column label,
+    .container .input-fields .row .column input,
+    .container .input-fields .row .column select {
+        width: 100%;
+        /* Make inputs and labels full width */
+        margin-bottom: 10px;
+        /* Add margin between inputs */
+    }
+
+    .container .btn-container {
+        text-align: center;
+        /* Center the button */
+    }
+}

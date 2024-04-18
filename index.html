@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electric Vehicle CO2 Emission Comparison Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h1>Know why you should switch to EV!!</h1>
+    </div>
+    <div class="input-fields">
+      <div class="row">
+        <div class="column">
+          <label for="vehicleSegment">Vehicle Segment:</label>
+          <select id="vehicleSegment" onchange="updateDefaults()">
+            <option value="select">Select</option>
+            <option value="4 Wheeler" data-co2-factor="179.94" data-electricity-co2-factor="850"
+              data-ev-battery-capacity="40" data-ev-range="250">4 Wheeler</option>
+            <option value="2 Wheeler" data-co2-factor="39.04" data-electricity-co2-factor="850"
+              data-ev-battery-capacity="3" data-ev-range="95">2 Wheeler</option>
+          </select>
+
+          <label for="journeyDistance">Journey Distance (km):</label>
+          <input type="number" id="journeyDistance" onchange="calculateAnnualJourneyDistance()">
+
+          <label for="Journey Frequency">Journey Frequency:</label>
+          <select id="journeyFrequency" onchange="calculateAnnualJourneyDistance()">
+            <option value="select">Select</option>
+            <option value="Daily">Daily</option>
+            <option value="Weekly">Weekly</option>
+            <option value="Monthly">Monthly</option>
+          </select>
+
+          <label for="annualJourneyDistance">Annual Journey Distance (km):</label>
+          <input type="number" id="annualJourneyDistance" readonly>
+
+
+        </div>
+        <div class="column">
+          <label for="evBatteryCapacity">Comparable EV Battery Capacity (kWh):</label>
+          <input type="number" id="evBatteryCapacity">
+
+          <label for="evRange">EV Range (km):</label>
+          <input type="number" id="evRange">
+
+          <label for="co2EmissionFactor">CO₂ Emissions Factor (g/km):</label>
+          <input type="number" id="co2EmissionFactor">
+
+          <label for="electricityCo2Factor">Electricity CO₂ Emissions Factor (g/kWh):</label>
+          <input type="number" id="electricityCo2Factor">
+        </div>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button onclick="calculateEmissions()">Calculate</button>
+    </div>
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
